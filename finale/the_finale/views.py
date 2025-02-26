@@ -1,4 +1,3 @@
-from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from .models import Post, Comment, Vehicle, Booking, Location, Review, LoyaltyProgram
 from .serializers import (
@@ -7,7 +6,7 @@ from .serializers import (
     ReviewSerializer, LoyaltyProgramSerializer
 )
 
-# --- Blog System ---
+
 class PostListCreateAPIView(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -24,7 +23,7 @@ class CommentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView)
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
-# --- Car Rental System ---
+
 class VehicleListCreateAPIView(generics.ListCreateAPIView):
     queryset = Vehicle.objects.all()
     serializer_class = VehicleSerializer

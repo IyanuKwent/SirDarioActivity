@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-# --- Blog System ---
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -21,7 +21,7 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-# --- Car Rental System ---
+
 class Vehicle(models.Model):
     type = models.CharField(max_length=50)
     model = models.CharField(max_length=100)

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Post, Comment, Vehicle, Booking, Location, Review, LoyaltyProgram
 
-# --- Blog System ---
+
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
@@ -12,7 +12,7 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = '__all__'
 
-# --- Car Rental System ---
+
 class VehicleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vehicle

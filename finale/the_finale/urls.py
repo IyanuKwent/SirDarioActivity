@@ -9,14 +9,14 @@ from .views import (
 )
 
 urlpatterns = [
-    # --- Blog System ---
+    
     path('posts/', PostListCreateAPIView.as_view(), name='list-create-post'),
     path('posts/<int:pk>/', PostRetrieveUpdateDestroyAPIView.as_view(), name='retrieve-update-destroy-post'),
     
     path('comments/', CommentListCreateAPIView.as_view(), name='list-create-comment'),
     path('comments/<int:pk>/', CommentRetrieveUpdateDestroyAPIView.as_view(), name='retrieve-update-destroy-comment'),
     
-    # --- Car Rental System ---
+    
     path('vehicles/', VehicleListCreateAPIView.as_view(), name='list-create-vehicle'),
     path('vehicles/<int:pk>/', VehicleRetrieveUpdateDestroyAPIView.as_view(), name='retrieve-update-destroy-vehicle'),
 
