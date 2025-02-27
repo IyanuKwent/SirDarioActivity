@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import axios from 'axios'
-import useeffect from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [post, setPost] = useState([])
 
-  useeffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts').then(response =>)
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/v1/api/posts/').then(response => {setPost(response.data)})
   })
 
   return (
@@ -25,6 +26,9 @@ function App() {
           Learn React
         </a>
       </header>
+      {
+        post.map((obj,index) => <div key={index}>{obj.title}</div>)
+      }
     </div>
   );
 }
