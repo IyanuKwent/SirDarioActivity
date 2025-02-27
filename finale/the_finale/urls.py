@@ -7,8 +7,10 @@ from .views import (
     ReviewListCreateAPIView, ReviewRetrieveUpdateDestroyAPIView,
     LoyaltyProgramRetrieveAPIView
 )
+from django.views.generic import TemplateView
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='index.html')),
     
     path('posts/', PostListCreateAPIView.as_view(), name='list-create-post'),
     path('posts/<int:pk>/', PostRetrieveUpdateDestroyAPIView.as_view(), name='retrieve-update-destroy-post'),
